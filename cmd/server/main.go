@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
+	"strings"
 )
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
@@ -15,6 +17,10 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateHandler(w http.ResponseWriter, r *http.Request) {
+
+	spliturl := strings.Split(r.RequestURI, "/")
+
+	fmt.Println(spliturl[2], spliturl[3], spliturl[4])
 
 }
 
